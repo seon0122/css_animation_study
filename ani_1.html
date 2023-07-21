@@ -4,8 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>애니메이션1</title>
+    <style>
+        /* transition:애니메이션적용속성 지속시간; */
+        #btn1 {
+            background: aqua;
+            width:100px; height: 150px; padding:10px;
+            border-radius: 10%; border: 5px solid #000;
+            /* 지속시간이 각 속성마다 다를 경우 */
+            /* transition:background 0.5s, width 0.8s; */ 
+            /* 지속시간이 모든 속성에 일치할 때 */
+            transition:all 0.5s; 
+            position: relative; left:0;
+        }
+        #btn1:hover {
+            background: yellow;
+            width:150px; height: 200px; padding:30px;
+            border-radius: 50%; border: 10px solid #00f;
+            left:100px;
+        }
+        #btn2 {
+            width:100px;
+            height:100px;
+            border:1px solid #000;
+            transition:width 1s 0.5s,height 2s,border 0.5s 0.5s;
+        }
+        #btn2:hover {
+            width:200px;
+            height:50px; border:3px solid #000;
+        }
+        /* transfrom 연습 */
+        #btn3 {
+            padding:10px;
+        }
+        /* btn3에 마우스를 올렸을 때 그 형제 box가 변경된다. */
+        #btn3:hover ~.box {
+            background: pink;
+            /* transform:속성(값) 속성(값) *//*1=100%*/
+            /* transform 속성은 자식, 자손에게도 영향을 준다.(예.글자 크기도 커짐) */
+            /* transform:scaleX(2) scaleY(0.5); */
+            /* transform:rotate(-60deg) scale(1.5); */
+            /* transform: skewY(-20deg); */
+            transform:translateX(200px);
+        }
+        .box {
+            transition:transform 0.5s;
+            width:100px; height:100px;
+            background: yellow;
+        }
+        #btn4 {
+            padding:10px;
+        }
+        #btn4:hover ~.target {
+            background: pink;
+            /* transform:translate(100px, 50px) scale(2) skew(-20deg); */
+            border-radius:10%; color:#00f;
+            transform-origin:left bottom; /* 중심축이 아닐 때만 사용 */
+            transform:rotate(60deg)
+        }
+        .target {
+            width:100px; height:100px;
+            font-weight:700; /* border:2px solid hotpink; */ display:block;
+            transition:all linear 0.8s;
+        }
+    </style>
 </head>
 <body>
-    
+    <ul>
+        <li>
+            <button id="btn1">animation1</button>
+        </li>
+        <li>
+            <button type="button" id="btn2">animation2</button>
+        </li>
+        <li>
+            <button type="button" id="btn3">transform1</button>
+            <hr>
+            <div class="box">box</div>
+        </li>
+        <li>
+            <button type="button" id="btn4">transform2</button>
+            <hr>
+            <span class="target">적용대상</span>
+        </li>
+        <li></li>
+    </ul>
 </body>
 </html>
