@@ -13,14 +13,28 @@
         }
         main span {width:100px; height:100px; background: lightgray; padding:10px;}
         main .target1 {transition:background 1s 0.5s;}
-        main .target2 {animation:right500 1.5s linear 3 alternate-reverse;}
-        main .target3 {}
-        main .target4 {}
-        main .target5 {}
+        main .target2 {animation:right500 1s linear 3 alternate both;}
+        main .target3 {animation:left_top_right 1s 0.3s ease-in-out 2 alternate;}
+        /* main .target4 {background: aquamarine; border-radius: 50%; animation: rotate_updown300 2s;} */
+        main .target5 {animation: opacity 2s 0.5s 2 both;}
         /* animation + @keyframes */
         @keyframes right500 {
             0% {transform: translateX(0);}
             100% {transform: translateX(500px);}
+        }
+        @keyframes left_top_right {
+            0% {transform: translate(0,0);}
+            50% {transform: translate(250px, -100px); border-radius:50%; background: yellow;}
+            100% {transform: translate(500px, 0);}
+        }
+        @keyframes rotate_updown300 {
+            0% {transform: rotate(0);}
+            50% {transform: rotate(150deg, 150deg) translateY(-100px);}
+            100% {transform: rotateX(300deg);}
+        }
+        @keyframes opacity {
+            0% {opacity:0; font-size: 1rem;}
+            100% {opacity: 1; font-size: 3rem;}
         }
         /* @keyframes 작성 위치 style맨 아래 또는 외부스타일로 분리 */
         /* 1. 사용자가 원하는 애니메이션의 시작-끝 장면 정하기 */
