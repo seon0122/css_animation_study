@@ -35,13 +35,18 @@
         }
         main .video_bg img {
             position:absolute; 
-            left:0; top:0; z-index:20;
+            left:0; top:0; z-index:11;
             width:100%;
         }
         main .txt_bg_ani {
             background:url(images/bg_flow.png) repeat-x left top;
             height:150px; width:100%;
             position:absolute; z-index:30;
+            animation:bg 11s linear infinite;
+        }
+        @keyframes bg {
+            0% {background-position-x:0;}
+            100% {background-position-x:1000px;} /* -1000px(반대방향) */
         }
     </style>
 </head>

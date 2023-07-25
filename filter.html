@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>필터연습</title>
+    <style>
+        #filter {
+            display:flex; flex-flow:column nowrap;
+            width:500px; margin:0 auto;
+        }
+        #filter .item1 {filter:blur(5px);}
+        #filter .item2 {filter:brightness(50%)}
+        #filter .item3 {filter:grayscale(80%)}
+        #filter .item4 {filter:contrast(70%)}
+        #filter .item5 {filter:invert(120%);}
+        #filter .item6 {filter:saturate(40%)}
+        #filter .item7 {filter:opacity(30%);}
+        #filter .item8 {filter:drop-shadow(0 0 10px red)}
+        #filter .item9 {filter:sepia(70%)}
+        #filter .item10 {filter:hue-rotate(120deg) opacity(30%)}
+    </style>
+</head>
+<body>
+    <div id="filter">
+        <img src="https://picsum.photos/id/20/300" alt="" class="item1">
+        <img src="https://picsum.photos/id/21/300" alt="" class="item2">
+        <img src="https://picsum.photos/id/22/300" alt="" class="item3">
+        <img src="https://picsum.photos/id/23/300" alt="" class="item4">
+        <img src="https://picsum.photos/id/24/300" alt="" class="item5">
+        <img src="https://picsum.photos/id/25/300" alt="" class="item6">
+        <img src="https://picsum.photos/id/26/300" alt="" class="item7">
+        <img src="https://picsum.photos/id/27/300" alt="" class="item8">
+        <img src="https://picsum.photos/id/28/300" alt="" class="item9">
+        <img src="https://picsum.photos/id/29/300" alt="" class="item10">
+    </div>
+</body>
+</html>
